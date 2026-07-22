@@ -13,3 +13,7 @@ The governance gate treats duplicated guidance as a defect because two copies of
 - [ADR-0001](docs/adr/ADR-0001.md)
 - [ADR-0002](docs/adr/ADR-0002.md)
 - [ADR-0003](docs/adr/ADR-0003.md)
+- [Reference-linked doc][refdoc]
+
+[unused-def]: docs/orphan.md
+[refdoc]: docs/reflinked.md

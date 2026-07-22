@@ -77,16 +77,34 @@ export function parseDoc(source) {
     headings.push({ level: m[1].length, text: m[2], line: i + 1, slug });
   }
 
-  // Inline links and images on code-masked text, plus reference definitions.
+  // Inline links and images on code-masked text, plus reference-style links.
+  // Reference DEFINITIONS (`[label]: target`) are validated like links but
+  // marked, because an unused definition renders as nothing — it must not
+  // make a target count as reachable. Reference USAGES (`[text][label]`,
+  // `[text][]`) resolve through their definition and are real links.
   const links = [];
   const linkPattern = /!?\[([^\]]*)\]\(([^()\s]+(?:\([^()\s]*\)[^()\s]*)?)(?:\s+"[^"]*")?\)/g;
   const refDefPattern = /^\s*\[([^\]]+)\]:\s+(\S+)/;
+  const refUsePattern = /!?\[([^\]]+)\]\[([^\]]*)\]/g;
+  const refDefs = new Map();
   for (let i = 0; i < masked.length; i++) {
     for (const m of masked[i].matchAll(linkPattern)) {
       links.push({ text: m[1], target: m[2], line: i + 1 });
     }
     const def = masked[i].match(refDefPattern);
-    if (def) links.push({ text: def[1], target: def[2], line: i + 1 });
+    if (def) {
+      refDefs.set(def[1].toLowerCase(), def[2]);
+      links.push({ text: def[1], target: def[2], line: i + 1, isDefinition: true });
+    }
+  }
+  for (let i = 0; i < masked.length; i++) {
+    if (refDefPattern.test(masked[i])) continue;
+    for (const m of masked[i].matchAll(refUsePattern)) {
+      const label = (m[2] || m[1]).toLowerCase();
+      const target = refDefs.get(label);
+      // An unknown label renders as literal text, not a link — skip it.
+      if (target !== undefined) links.push({ text: m[1], target, line: i + 1 });
+    }
   }
 
   // Prose blocks: maximal runs of non-blank, non-heading masked lines. Each
