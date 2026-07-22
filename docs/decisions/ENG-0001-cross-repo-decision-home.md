@@ -67,3 +67,13 @@ branch protection is *not* among the things forming an organization would buy.
 The forcing function for an org remains adding collaborators, which has not
 happened. Recorded because the original reasoning weighed the org option
 without stating the maintained tier it was being compared against.
+
+## Amendment — 2026-07-22: repository renamed to `playbook-engineering`
+
+The decision home named above as `qwts/playbook-software-engineering` is now
+`qwts/playbook-engineering`
+([#12](https://github.com/qwts/playbook-engineering/issues/12)). Nothing about
+the decision changes — this repository remains the cross-repo decision home.
+The original name stays in the text per the no-rewrite rule, and GitHub's
+rename redirect keeps old citations resolving. Use the new name in anything
+written from here on.

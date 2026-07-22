@@ -78,6 +78,22 @@ Two phases, not a big-bang migration.
 - **CI reporting the last failure, not the first** (a masking bug found during #565: a failed test in an `&&`-chained lane surfaced as a coverage-floor error) → a property to fix in the phase-2 shared skeleton.
 - **`max-lines-per-function` set to `warn`, never enforced** → *not* this decision. That is ESLint config, shared via a config package, a different mechanism. Tracked separately so it is not miscategorized as CI.
 
+## Amendment — 2026-07-22: canonical consumption path after repo rename
+
+The repository was renamed from `qwts/playbook-software-engineering` to
+`qwts/playbook-engineering`
+([#12](https://github.com/qwts/playbook-engineering/issues/12)), so the
+canonical form of the consumption path in the decision is:
+
+```yaml
+uses: qwts/playbook-engineering/.github/workflows/<name>.yml@v1
+```
+
+Consumers already pinned to the old path keep working through GitHub's rename
+redirect; new wiring should use the canonical path. The pinning model and the
+CI-gated `v1` tag are unaffected. The original snippet above is left as
+written, per the rule that accepted records are amended, not rewritten.
+
 ## References
 
 - [ENG-0003](ENG-0003-repo-is-documentation-source-of-truth.md) established this repo as the cross-repo home for shared engineering assets; this extends that from documents to CI/CD.
