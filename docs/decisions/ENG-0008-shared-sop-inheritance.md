@@ -1,6 +1,6 @@
 # ENG-0008: Shared SOPs — defined once here, inherited by default, varied only by explicit delta
 
-**Status:** Proposed
+**Status:** Accepted
 **Date:** 2026-07-22
 
 ## Context

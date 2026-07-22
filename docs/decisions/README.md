@@ -46,11 +46,12 @@ reasoning trail survives.
 | [ENG-0005](ENG-0005-static-analysis-survey-results.md) | Static-analysis survey: close the workflow-security gap, keep natives | Proposed |
 | [ENG-0006](ENG-0006-agentic-primitives-governance.md) | Governance of agentic primitives: one canonical source, progressive disclosure, eval-gated changes | Proposed |
 | [ENG-0007](ENG-0007-feature-lifecycle-convention.md) | Feature lifecycle: open with problem/requirements/design/proposed patterns, close with the solution as built | Proposed |
-| [ENG-0008](ENG-0008-shared-sop-inheritance.md) | Shared SOPs: defined once here, inherited by default, varied only by explicit delta | Proposed |
+| [ENG-0008](ENG-0008-shared-sop-inheritance.md) | Shared SOPs: defined once here, inherited by default, varied only by explicit delta | Accepted |
 | [ENG-0009](ENG-0009-documentation-governance-gate.md) | Documentation is gated like code — deterministic checks first, evaluation later | Proposed |
 | [ENG-0010](ENG-0010-docs-evaluation-loop.md) | The docs evaluation loop — adopt with tight bounds, retire on silence | Proposed |
 
 ## Related
 
+- [Shared SOPs index](../sop/README.md) — the standard operating procedures ENG-0008 governs (how work moves: branch → PR → review → release)
 - [GitHub account reference](../reference/github-account.md) — account tier (Pro) and what decisions assume about it
 - [`qwts/photos` wiki](https://github.com/qwts/photos/wiki) — photos' own `ADR-NNNN` series and SOPs

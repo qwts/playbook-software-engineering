@@ -7,11 +7,12 @@ records), shared SOPs, and reusable CI. How work moves here:
   format, numbering, and the supersede-don't-rewrite rule are in
   [docs/decisions/README.md](docs/decisions/README.md). Records enter as
   `Proposed`; the repo owner flips them to `Accepted` in review.
-- **SOPs**: shared procedures live in [docs/sop/](docs/sop/) and follow
+- **SOPs**: shared procedures live in [docs/sop/](docs/sop/README.md) and follow
   [ENG-0008](docs/decisions/ENG-0008-shared-sop-inheritance.md) — baseline
   edits here propagate to every repo, so changes go through PR review with
   the changelog updated.
-- **Workflow**: branch → PR → review → merge to `master`. Features follow the
+- **Workflow**: branch → PR → review → merge to `main`, per the shared
+  [branch, PR, and review SOP](docs/sop/branch-pr-review.md). Features follow the
   [ENG-0007](docs/decisions/ENG-0007-feature-lifecycle-convention.md)
   lifecycle (problem, requirements, design, proposed patterns; closeout on
   close).
