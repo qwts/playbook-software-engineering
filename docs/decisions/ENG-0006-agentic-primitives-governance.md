@@ -19,7 +19,7 @@ Inventory at survey time (2026-07-22):
 | image-trail | 222 (canonical) | 62 — pointer | 60 — genuine Copilot review rules | `.claude/commands`, `settings.json`, `.cursor` |
 | cartograph | 117 (canonical) | 26 — pointer | — | — |
 | bookmarkit | **none** | 113 — became de-facto canonical | **leftover scaffolding boilerplate** (a stale setup checklist re-read every session) | — |
-| playbook | none | none | — | — |
+| playbook | none | none | 17 — thin pointer into `docs/` | 7 Copilot `.agent.md` agents (SDLC handoff chain) + 29 `.prompt.md` files |
 
 Three observations drive this record:
 
@@ -113,7 +113,11 @@ than arriving ungoverned.
 - Immediate, mandatory per-repo work (tracked as alignment issues, one per
   repo): bookmarkit extracts its CLAUDE.md into a canonical AGENTS.md and
   deletes the scaffolding-boilerplate copilot-instructions; this playbook
-  repo adds a root AGENTS.md of its own; photos and image-trail take
+  repo adds a root AGENTS.md of its own **and brings its existing Copilot
+  agent/prompt suite (7 `.agent.md` + 29 `.prompt.md`) under this
+  governance** — vendor-specific interactive handoffs are legitimate vendor
+  content, but they get the same review-as-code, dedupe-against-`docs/`, and
+  disclosure discipline as everything else; photos and image-trail take
   progressive-disclosure passes on their 287- and 222-line root files;
   cartograph audits its (already close) pair for duplication; quorum is
   bootstrapped conformant with its first code.
