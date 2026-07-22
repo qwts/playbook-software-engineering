@@ -32,10 +32,13 @@ duplicate of the default.
 
 ## Repo-side settings that accompany the files
 
-Private vulnerability reporting **enabled** (SECURITY.md depends on it);
-secret scanning + push protection and Dependabot security updates **on**
-(the ENG-0005 baseline); CodeQL default setup **on** once the repo has code.
+Default branch is **`main`** in every repo (the playbook itself renamed from
+`master` on 2026-07-22, closing the org's last split); private vulnerability
+reporting **enabled** (SECURITY.md depends on it); secret scanning + push
+protection and Dependabot security updates **on** (the ENG-0005 baseline);
+CodeQL default setup **on** once the repo has code.
 
 ## Changelog
 
 - 2026-07-22 — initial version, from the basic-docs audit following PR #8.
+- 2026-07-22 — default branch standardized to `main` org-wide.
