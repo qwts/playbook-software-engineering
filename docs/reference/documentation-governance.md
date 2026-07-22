@@ -50,4 +50,4 @@ The reusable workflow checks out the caller's repo, fetches this repo's tooling,
 
 - **No prose style, tone, or grammar rules.** Style is not an agent failure.
 - **No model calls.** Every result is reproducible from a checkout; a check that needs a model is not a merge gate.
-- **No effectiveness measurement.** Whether the docs actually *work* for agents is Phase 2 of [the tooling issue](https://github.com/qwts/playbook-engineering/issues/2) — a benchmark-driven evaluation loop, run periodically rather than per-PR. It gets its own explicit go/no-go decision and must not block these checks.
+- **No effectiveness measurement.** Whether the docs actually *work* for agents is the job of [docs-eval](docs-evaluation.md) — the benchmark-driven evaluation loop adopted (with tight bounds) by [ENG-0010](../decisions/ENG-0010-docs-evaluation-loop.md). It runs on demand, costs model calls, and never blocks these checks.
