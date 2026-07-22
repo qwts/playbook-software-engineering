@@ -1,0 +1,55 @@
+# SOP: Release and versioning
+
+How a `qwts` repo that cuts releases tracks versions, records changes, and
+handles dependency bumps. Shared baseline under [ENG-0008](../decisions/ENG-0008-shared-sop-inheritance.md).
+This SOP is deliberately thin: release *mechanics* (tooling, tag format,
+changeset flow) are still largely repo-local, so the baseline states only the
+rules that already hold everywhere and marks the rest as recorded deltas.
+
+## When this SOP applies
+
+A repo is in scope once it cuts versions or releases. A repo that ships no
+versioned artifact inherits nothing here and needs no delta — this SOP simply
+does not apply to it.
+
+## Changelog and version consistency (mandatory when applicable)
+
+- A repo that cuts releases maintains a `CHANGELOG.md` (the trigger recorded in
+  [repository baseline files](repo-baseline-files.md)); the release entry lands
+  in the same unit of work as the change, not in a later sweep.
+- The declared version stays consistent across the repo's manifests and
+  lockfiles. Where a repo has a version-consistency check, that check is part of
+  the merge bar.
+
+## Dependency bumps
+
+- Dependency versions are locked by a committed lockfile. Automated bumps come
+  from Dependabot as the single version-bumping actor; contributor PRs do not
+  hand-bump dependencies as a side effect of unrelated work.
+- Dependabot security updates are on for every repo — the security floor recorded
+  in [repository baseline files](repo-baseline-files.md) — and a bump follows the
+  same review bar as any other change.
+
+## Changing a shared baseline
+
+A substantive edit to a shared SOP or reusable workflow is itself a release: it
+rides the [ENG-0004](../decisions/ENG-0004-centralize-shared-cicd.md)
+review-then-propagate discipline — land it here behind review with the SOP
+changelog updated, then let consumers re-point. A shared change never moves a
+`@v1` tag before this repo's own gate is green.
+
+## Recorded deltas (see the inventory for the full list)
+
+- **photos** and **cartograph** each run a repo-local version-consistency gate
+  (a `version:check`-style script) as part of CI; the exact command is a per-repo
+  delta.
+- **photos** additionally pins dependencies to exact versions (no semver ranges);
+  most repos rely on the committed lockfile instead.
+- Any repo that adopts a changeset tool records that tool and its flow as a delta
+  until enough repos share it to promote the mechanics up here.
+
+## Changelog
+
+- 2026-07-22 — initial version; captured the changelog, version-consistency, and
+  dependency-bump rules already common across repos, and scoped the rest as
+  recorded deltas pending promotion (ENG-0008).

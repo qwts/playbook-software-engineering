@@ -52,8 +52,7 @@ Each document includes navigation links, prerequisites, and cross-references to 
 
 ## Shared standards and tooling
 
-- [Shared SOPs](docs/sop/repo-baseline-files.md) — org-wide standard operating procedures, inherited by every repo (ENG-0008).
-- [Feature lifecycle](docs/sop/feature-lifecycle.md) — the shared feature issue form and the closeout every feature records at close (ENG-0007).
+- [Shared SOPs](docs/sop/README.md) — org-wide standard operating procedures for how work moves, inherited by every repo (ENG-0008).
 - [Org-wide agent conventions](docs/reference/agent-conventions.md) — the shared agent working agreement every repo's `AGENTS.md` links to (ENG-0006).
 - [Agentic primitives conformance checklist](docs/reference/agentic-primitives-conformance-checklist.md) — the ENG-0006 §6 checklist per-repo alignment issues link to.
 - [Documentation governance](docs/reference/documentation-governance.md) — the `docs-gov` gate: deterministic checks that keep docs agent-readable, consumable by other repos as a reusable workflow.
