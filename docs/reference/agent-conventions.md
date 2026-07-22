@@ -4,7 +4,7 @@ The shared working agreement every `qwts` repo's `AGENTS.md` links to instead of
 
 ## One canonical file per repo
 
-Each repo has exactly one vendor-neutral `AGENTS.md` at its root. Vendor files (`CLAUDE.md`, `copilot-instructions.md`, `.cursor/rules`, etc.) are thin adapters: brief orientation plus a pointer back to `AGENTS.md`, plus whatever is genuinely vendor-specific (a Copilot custom-agent chain, a Claude-only tool permission). A fact stated in both `AGENTS.md` and a vendor file is a bug, not redundancy for safety.
+Each repo has exactly one vendor-neutral `AGENTS.md` at its root. Vendor files (`CLAUDE.md`, `.github/copilot-instructions.md`, `.cursor/rules`, etc.) are thin adapters: brief orientation plus a pointer back to `AGENTS.md`, plus whatever is genuinely vendor-specific (a Copilot custom-agent chain, a Claude-only tool permission). A fact stated in both `AGENTS.md` and a vendor file is a bug, not redundancy for safety.
 
 ## PR-first, always
 
