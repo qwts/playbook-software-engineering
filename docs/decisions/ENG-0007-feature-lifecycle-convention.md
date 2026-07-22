@@ -53,6 +53,7 @@ Every **feature** in every org repo follows one lifecycle, template-enforced:
 **At close — the closeout.** Before the issue closes, a closing comment (or
 linked doc for large features) records:
 
+<!-- markdownlint-disable-next-line MD029 -- section 5 deliberately continues the 1–4 numbering of the open-time spec -->
 5. **Solution as built and patterns actually used** — including deltas from
    the proposal. Deviating from the proposed design is normal;
    *undocumented* deviation is the failure mode. If a new pattern emerged,

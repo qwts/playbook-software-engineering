@@ -1,5 +1,7 @@
 # Requirements Gathering
 
+Collects the requirements questions — functionality, user flows, UX/UI, deployment, integration, security, and performance — that must be answered before design work begins.
+
 > **Navigation:** [Home](00-documentation_index.md) | Next: [Technology Selection & PoC](02-technology_selection_and_poc.md)
 >
 > **Prerequisites:** None - this is the starting document

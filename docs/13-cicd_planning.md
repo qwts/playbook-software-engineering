@@ -1,5 +1,7 @@
 # CI/CD Planning
 
+Designs the CI/CD pipelines: build automation, deployment strategies, and pipeline security.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Observability Stack Planning](12-observability_stack_planning.md) | Next: [Disaster Recovery Planning](14-disaster_recovery_planning.md)
 >
 > **Prerequisites:** Complete [Project Structure Planning](07-project_structure_planning.md) and [Compute Selection](09-compute_selection.md)

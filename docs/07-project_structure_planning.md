@@ -1,5 +1,7 @@
 # Project Structure Planning
 
+Plans how the codebase and repositories are organized: directory layout, infrastructure-as-code templates, and naming conventions.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Architecture Planning](06-architecture_planning.md) | Next: [Infrastructure Guidelines](08-infrastructure_guidelines.md)
 
 > **Prerequisites:** Complete [Architecture Planning](06-architecture_planning.md)

@@ -1,5 +1,7 @@
 # Disaster Recovery Planning
 
+Establishes disaster recovery: RTO/RPO targets, backup strategies, and failover procedures.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [CI/CD Planning](13-cicd_planning.md) | Next: [Cost Optimization & FinOps](15-cost_optimization_and_finops.md)
 >
 > **Prerequisites:** Complete [Architecture Planning](06-architecture_planning.md) and [Database & Storage Planning](10-database_and_storage_planning.md)

@@ -1,5 +1,7 @@
 # Cost Optimization & FinOps
 
+Manages cloud cost with FinOps practices: monitoring, resource optimization, and budget planning.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Disaster Recovery Planning](14-disaster_recovery_planning.md) | Next: [Performance & Optimization Planning](16-performance_and_optimization_planning.md)
 >
 > **Prerequisites:** Review [Architecture Planning](06-architecture_planning.md) and [Compute Selection](09-compute_selection.md)

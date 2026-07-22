@@ -1,5 +1,7 @@
 # Networking & Load Balancing
 
+Plans the network architecture: VPC design, load balancing, CDN strategy, and network security.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Database & Storage Planning](10-database_and_storage_planning.md) | Next: [Observability Stack Planning](12-observability_stack_planning.md)
 >
 > **Prerequisites:** Complete [Infrastructure Guidelines](08-infrastructure_guidelines.md) (VPC/subnet configuration)

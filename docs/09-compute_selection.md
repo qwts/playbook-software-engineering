@@ -1,5 +1,7 @@
 # Compute Selection
 
+Selects the compute platform: virtual machines versus containers versus serverless, orchestration, and scaling strategy.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Infrastructure Guidelines](08-infrastructure_guidelines.md) | Next: [Database & Storage Planning](10-database_and_storage_planning.md)
 >
 > **Prerequisites:** Complete [Architecture Planning](06-architecture_planning.md) (section 2.2 Serverless vs Compute)
