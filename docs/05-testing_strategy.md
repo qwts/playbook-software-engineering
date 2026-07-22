@@ -1,5 +1,7 @@
 # Testing Strategy
 
+Defines the testing approach for the project: test types, coverage expectations, automation, environments, and quality gates.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Security & Compliance Planning](04-security_and_compliance_planning.md) | Next: [Architecture Planning](06-architecture_planning.md)
 >
 > **Prerequisites:** Complete [Requirements Gathering](01-requirements_gathering.md) and [Security & Compliance Planning](04-security_and_compliance_planning.md)

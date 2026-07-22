@@ -1,5 +1,7 @@
 # Performance & Optimization Planning
 
+Plans performance work: load testing, monitoring, and optimization strategies.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Cost Optimization & FinOps](15-cost_optimization_and_finops.md) | Next: [UAT & Pilot](17-uat_and_pilot.md)
 >
 > **Prerequisites:** Complete [Compute Selection](09-compute_selection.md) and [Database & Storage Planning](10-database_and_storage_planning.md)

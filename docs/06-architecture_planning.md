@@ -1,5 +1,7 @@
 # Architecture Planning
 
+Works through the architecture decisions that shape the system: monolith versus microservices, serverless versus provisioned compute, and multi-region strategy.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Testing Strategy](05-testing_strategy.md) | Next: [Project Structure Planning](07-project_structure_planning.md)
 >
 > **Prerequisites:** Complete [Requirements Gathering](01-requirements_gathering.md) first

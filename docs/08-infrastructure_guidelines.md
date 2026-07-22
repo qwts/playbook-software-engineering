@@ -1,5 +1,7 @@
 # Infrastructure Guidelines
 
+Guides infrastructure setup: cloud provider selection, resource provisioning, and environment isolation.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Project Structure Planning](07-project_structure_planning.md) | Next: [Compute Selection](09-compute_selection.md)
 >
 > **Prerequisites:** Complete [Architecture Planning](06-architecture_planning.md) and [Project Structure Planning](07-project_structure_planning.md)

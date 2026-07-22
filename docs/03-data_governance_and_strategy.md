@@ -44,9 +44,9 @@ Avoid "data swamps" by defining lifecycle rules.
 
 ### 3.1 Retention
 - How long must specific data types be kept? (Legal/Compliance)
-    - Logs: [Prompt]
-    - User Records: [Prompt]
-    - Transaction History: [Prompt]
+  - Logs: [Prompt]
+  - User Records: [Prompt]
+  - Transaction History: [Prompt]
 
 ### 3.2 Deletion & Archiving
 - Process for "Right to be Forgotten" (GDPR/CCPA requests): [Prompt]

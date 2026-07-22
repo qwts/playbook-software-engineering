@@ -38,8 +38,8 @@ Select the core technologies based on team expertise, ecosystem, and requirement
 
 ### 2.3 Vendor Evaluation (RFPs)
 - List critical 3rd party vendors to evaluate (e.g., Auth0, Stripe, CMS):
-    - [ ] Vendor A
-    - [ ] Vendor B
+  - [ ] Vendor A
+  - [ ] Vendor B
 
 ---
 

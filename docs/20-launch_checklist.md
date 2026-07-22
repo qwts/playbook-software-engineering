@@ -1,5 +1,7 @@
 # Launch Checklist
 
+The go-live checklist: deployment verification, environment lockdown, and final testing.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [End User Training & Change Management](19-end_user_training_and_change_management.md) | Next: [Post-Launch Operations](21-post_launch_operations.md)
 >
 > **Prerequisites:** Complete [End User Training & Change Management](19-end_user_training_and_change_management.md) and pass [Final Validations](18-final_validations.md)

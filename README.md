@@ -2,7 +2,7 @@
 
 This repository is a curated collection of documents, processes, and workflows designed to guide software engineering practices and support the Software Development Life Cycle (SDLC). It serves as a centralized reference for teams to understand requirements gathering, architecture planning, infrastructure, security, observability, and more.
 
-It is also the home for **cross-repo engineering decisions** — see below.
+It is also the home for **cross-repo engineering decisions** — see the [decision index](docs/decisions/README.md).
 
 ## Engineering decisions (ENG series)
 
@@ -18,20 +18,20 @@ is simple: **if exactly one repo would have to change, it is not an ENG record.*
 
 The `docs/` folder contains 22 comprehensive guides covering the complete Software Development Life Cycle (SDLC), organized by phase:
 
-### 📋 [Complete Documentation Index](docs/README.md)
+### 📋 [Complete Documentation Index](docs/00-documentation_index.md)
 
 **Planning Phase** (Documents 1-6): Requirements, architecture, security, and technology decisions
-- [Requirements Gathering](docs/1-requirements_gathering.md)
-- [Technology Selection & PoC](docs/2-technology_selection_and_poc.md)
-- [Data Governance & Strategy](docs/3-data_governance_and_strategy.md)
-- [Security & Compliance Planning](docs/4-security_and_compliance_planning.md)
-- [Testing Strategy](docs/5-testing_strategy.md)
-- [Architecture Planning](docs/6-architecture_planning.md)
+- [Requirements Gathering](docs/01-requirements_gathering.md)
+- [Technology Selection & PoC](docs/02-technology_selection_and_poc.md)
+- [Data Governance & Strategy](docs/03-data_governance_and_strategy.md)
+- [Security & Compliance Planning](docs/04-security_and_compliance_planning.md)
+- [Testing Strategy](docs/05-testing_strategy.md)
+- [Architecture Planning](docs/06-architecture_planning.md)
 
 **Development Phase** (Documents 7-16): Infrastructure, deployment, and technical implementation
-- [Project Structure Planning](docs/7-project_structure_planning.md)
-- [Infrastructure Guidelines](docs/8-infrastructure_guidelines.md)
-- [Compute Selection](docs/9-compute_selection.md)
+- [Project Structure Planning](docs/07-project_structure_planning.md)
+- [Infrastructure Guidelines](docs/08-infrastructure_guidelines.md)
+- [Compute Selection](docs/09-compute_selection.md)
 - [Database & Storage Planning](docs/10-database_and_storage_planning.md)
 - [Networking & Load Balancing](docs/11-networking_and_load_balancing.md)
 - [Observability Stack Planning](docs/12-observability_stack_planning.md)
@@ -49,6 +49,13 @@ The `docs/` folder contains 22 comprehensive guides covering the complete Softwa
 - [Decommissioning & Retirement](docs/22-decommissioning_and_retirement.md)
 
 Each document includes navigation links, prerequisites, and cross-references to related topics. Use these guides to align on best practices, ensure consistency, and drive quality in your projects.
+
+## Shared standards and tooling
+
+- [Shared SOPs](docs/sop/repo-baseline-files.md) — org-wide standard operating procedures, inherited by every repo (ENG-0008).
+- [Documentation governance](docs/reference/documentation-governance.md) — the `docs-gov` gate: deterministic checks that keep docs agent-readable, consumable by other repos as a reusable workflow.
+- [Documentation style guide](docs/23-documentation_style_guide.md) — conventions for writing docs in this playbook.
+- [Contributing](CONTRIBUTING.md) — how changes to this repository land.
 
 ## Usage
 1. **[Usage Guide](usage.md)** — VS Code Copilot agents, slash commands, and workflows for interactive requirements gathering.

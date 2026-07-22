@@ -1,5 +1,7 @@
 # Post-Launch Operations
 
+Defines post-launch operations: incident management, monitoring, and ongoing change management.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Launch Checklist](20-launch_checklist.md) | Next: [Decommissioning & Retirement](22-decommissioning_and_retirement.md)
 >
 > **Prerequisites:** Complete [Launch Checklist](20-launch_checklist.md) and system launch

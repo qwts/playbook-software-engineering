@@ -1,5 +1,7 @@
 # Observability Stack Planning
 
+Plans the observability stack: metrics, logs, traces, dashboards, and alerting.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Networking & Load Balancing](11-networking_and_load_balancing.md) | Next: [CI/CD Planning](13-cicd_planning.md)
 >
 > **Prerequisites:** Complete [Infrastructure Guidelines](08-infrastructure_guidelines.md) (monitoring section)

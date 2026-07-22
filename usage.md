@@ -8,6 +8,7 @@ This document describes how to use the VS Code Copilot customizations in this wo
 
 ## Table of Contents
 
+- [Shared Agent Behaviors](#shared-agent-behaviors)
 - [Requirements Gathering Agent](#requirements-gathering-agent)
 - [Deployment Strategy Agent](#deployment-strategy-agent)
 - [Database & Data Management Agent](#database--data-management-agent)
@@ -17,6 +18,15 @@ This document describes how to use the VS Code Copilot customizations in this wo
 - [Technology Selection Agent](#technology-selection-agent)
 - [Slash Commands (Prompts)](#slash-commands-prompts)
 - [Adding Future Usage Details](#adding-future-usage-details)
+
+---
+
+## Shared Agent Behaviors
+
+Every agent in this guide behaves the same way on these two points; the per-agent **Key Behaviors** sections list only what differs.
+
+- **Interactive** — The agent waits for your answers before moving on. You can skip sections or go deeper as needed.
+- **Confirmation before fetch/diagram** — If you ask for documentation or diagrams, the agent will ask: *"Would you like me to [fetch X / create a diagram]? Or do you have your own to reference?"* It only proceeds after you confirm.
 
 ---
 
@@ -39,8 +49,6 @@ This document describes how to use the VS Code Copilot customizations in this wo
 
 ### Key Behaviors
 
-- **Interactive** — The agent waits for your answers before moving on. You can skip sections or go deeper as needed.
-- **Confirmation before fetch/diagram** — If you ask for documentation or diagrams, the agent will ask: *"Would you like me to [fetch X / create a diagram]? Or do you have your own to reference?"* It only proceeds after you confirm.
 - **Diagrams** — When approved, the agent generates Mermaid diagrams (user flows, persona matrices, device matrices).
 - **Summary** — Run `/requirements-summary` anytime to get a consolidated markdown summary.
 
@@ -68,8 +76,6 @@ When Section 1 is complete, handoff buttons appear: **Continue to Deployment Str
 
 ### Key Behaviors
 
-- **Interactive** — The agent waits for your answers before moving on. You can skip sections or go deeper as needed.
-- **Confirmation before fetch/diagram** — If you ask for documentation or diagrams, the agent will ask: *"Would you like me to [fetch X / create a diagram]? Or do you have your own to reference?"* It only proceeds after you confirm.
 - **Diagrams** — When approved, the agent generates Mermaid diagrams (environment topology, container vs VM flowchart, scaling architecture, hybrid approach).
 - **Summary** — Run `/deployment-summary` anytime to get a consolidated markdown summary.
 
@@ -98,8 +104,6 @@ When Section 2 is complete, handoff buttons appear: **Continue to Technology Sel
 
 ### Key Behaviors
 
-- **Interactive** — The agent waits for your answers before moving on. You can skip sections or go deeper as needed.
-- **Confirmation before fetch/diagram** — If you ask for documentation or diagrams, the agent will ask: *"Would you like me to [fetch X / create a diagram]? Or do you have your own to reference?"* It only proceeds after you confirm.
 - **Diagrams** — When approved, the agent generates Mermaid diagrams (database topology, caching architecture, message flow, integration diagrams).
 - **Summary** — Run `/database-summary` anytime to get a consolidated markdown summary.
 
@@ -128,8 +132,6 @@ When Section 3 is complete, handoff buttons appear: **Continue to Technology Sel
 
 ### Key Behaviors
 
-- **Interactive** — The agent waits for your answers before moving on. You can skip sections or go deeper as needed.
-- **Confirmation before fetch/diagram** — If you ask for documentation or diagrams, the agent will ask: *"Would you like me to [fetch X / create a diagram]? Or do you have your own to reference?"* It only proceeds after you confirm.
 - **Diagrams** — When approved, the agent generates Mermaid diagrams (authentication flow, compliance matrix, encryption architecture).
 - **Summary** — Run `/security-summary` anytime to get a consolidated markdown summary.
 
@@ -158,8 +160,6 @@ When Section 4 is complete, handoff buttons appear: **Continue to Technology Sel
 
 ### Key Behaviors
 
-- **Interactive** — The agent waits for your answers before moving on. You can skip sections or go deeper as needed.
-- **Confirmation before fetch/diagram** — If you ask for documentation or diagrams, the agent will ask: *"Would you like me to [fetch X / create a diagram]? Or do you have your own to reference?"* It only proceeds after you confirm.
 - **Diagrams** — When approved, the agent generates Mermaid diagrams (SLA matrix, metrics/logs architecture, monitoring and alerting flow).
 - **Summary** — Run `/performance-summary` anytime to get a consolidated markdown summary.
 
@@ -188,8 +188,6 @@ When Section 5 is complete, handoff buttons appear: **Continue to Technology Sel
 
 ### Key Behaviors
 
-- **Interactive** — The agent waits for your answers before moving on. You can skip sections or go deeper as needed.
-- **Confirmation before fetch/diagram** — If you ask for documentation or diagrams, the agent will ask: *"Would you like me to [fetch X / create a diagram]? Or do you have your own to reference?"* It only proceeds after you confirm.
 - **Diagrams** — When approved, the agent generates Mermaid diagrams (third-party dependency map, risk matrix, timeline/phase diagram).
 - **Summary** — Run `/additional-summary` anytime to get a consolidated markdown summary.
 

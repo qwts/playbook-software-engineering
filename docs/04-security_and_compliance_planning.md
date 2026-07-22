@@ -1,5 +1,7 @@
 # Security & Compliance Planning
 
+Covers the security architecture and regulatory-compliance questions to settle before implementation: authentication, authorization, encryption, and applicable frameworks.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Data Governance & Strategy](03-data_governance_and_strategy.md) | Next: [Testing Strategy](05-testing_strategy.md)
 >
 > **Prerequisites:** Complete [Requirements Gathering](01-requirements_gathering.md) (section 4 Security) and [Data Governance & Strategy](03-data_governance_and_strategy.md)

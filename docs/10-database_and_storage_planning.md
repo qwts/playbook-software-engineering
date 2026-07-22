@@ -1,5 +1,7 @@
 # Database & Storage Planning
 
+Plans databases and storage: engine selection, data modeling, caching, backup, and migration.
+
 > **Navigation:** [Home](00-documentation_index.md) | Previous: [Compute Selection](09-compute_selection.md) | Next: [Networking & Load Balancing](11-networking_and_load_balancing.md)
 >
 > **Prerequisites:** Complete [Requirements Gathering](01-requirements_gathering.md) (section 3 Database) and [Architecture Planning](06-architecture_planning.md)

@@ -19,8 +19,8 @@ Validate that the system meets business needs, not just technical specs.
 ### 1.1 Scope & Participants
 - **Stakeholders:** Who signs off on functionality?
 - **Test Cases:** Real-world workflows (not script-based per se, but goal-based).
-    - [ ] Workflow A: [Prompt]
-    - [ ] Workflow B: [Prompt]
+  - [ ] Workflow A: [Prompt]
+  - [ ] Workflow B: [Prompt]
 
 ### 1.2 Feedback Mechanism
 - How will testers report issues? (Jira, Spreadsheet, specialized tool)
@@ -48,6 +48,6 @@ Formal checkpoints.
 
 - **Go-Live Date:** [Prompt]
 - **Approvers:**
-    - [ ] Product Owner
-    - [ ] Engineering Lead
-    - [ ] Business Sponsor
+  - [ ] Product Owner
+  - [ ] Engineering Lead
+  - [ ] Business Sponsor
