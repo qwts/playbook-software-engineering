@@ -2,7 +2,7 @@
 
 This repository is a curated collection of documents, processes, and workflows designed to guide software engineering practices and support the Software Development Life Cycle (SDLC). It serves as a centralized reference for teams to understand requirements gathering, architecture planning, infrastructure, security, observability, and more.
 
-It is also the home for **cross-repo engineering decisions** — see the [decision index](docs/decisions/README.md).
+It is also the home for **cross-repo engineering decisions** — see the [decision index](docs/decisions/README.md) — and for the org-wide agent conventions every repo's [AGENTS.md](AGENTS.md) points to; see [AGENTS.md](AGENTS.md) for this repo's own agent context.
 
 ## Engineering decisions (ENG series)
 
@@ -53,6 +53,8 @@ Each document includes navigation links, prerequisites, and cross-references to 
 ## Shared standards and tooling
 
 - [Shared SOPs](docs/sop/README.md) — org-wide standard operating procedures for how work moves, inherited by every repo (ENG-0008).
+- [Org-wide agent conventions](docs/reference/agent-conventions.md) — the shared agent working agreement every repo's `AGENTS.md` links to (ENG-0006).
+- [Agentic primitives conformance checklist](docs/reference/agentic-primitives-conformance-checklist.md) — the ENG-0006 §6 checklist per-repo alignment issues link to.
 - [Documentation governance](docs/reference/documentation-governance.md) — the `docs-gov` gate: deterministic checks that keep docs agent-readable, consumable by other repos as a reusable workflow.
 - [Documentation style guide](docs/23-documentation_style_guide.md) — conventions for writing docs in this playbook.
 - [Contributing](CONTRIBUTING.md) — how changes to this repository land.

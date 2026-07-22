@@ -31,10 +31,11 @@ starts and the PR is where it lands.
 
 ## Feature issues (mandatory — extend, don't drop)
 
-Feature work follows the [ENG-0007](../decisions/ENG-0007-feature-lifecycle-convention.md)
-lifecycle: open with problem, requirements, design, and proposed patterns; close
-with the solution as built. A repo may add sections to the shared feature
-template but may not drop them.
+Feature work follows the [feature-lifecycle SOP](feature-lifecycle.md) (decision:
+[ENG-0007](../decisions/ENG-0007-feature-lifecycle-convention.md)): it opens as a
+spec — problem, requirements, design, proposed patterns — and closes as a record
+of what was built. A repo may add sections to the shared feature form but may not
+drop them.
 
 ## Closing
 
