@@ -23,11 +23,12 @@ does not apply to it.
 
 ## Dependency bumps
 
-- Dependencies are pinned to exact versions. Automated bumps come from Dependabot
-  as the single version-bumping actor; contributor PRs do not hand-bump
-  dependencies as a side effect of unrelated work.
-- Security-update bumps are on for every repo (the ENG-0005 baseline) and follow
-  the same review bar as any other change.
+- Dependency versions are locked by a committed lockfile. Automated bumps come
+  from Dependabot as the single version-bumping actor; contributor PRs do not
+  hand-bump dependencies as a side effect of unrelated work.
+- Dependabot security updates are on for every repo — the security floor recorded
+  in [repository baseline files](repo-baseline-files.md) — and a bump follows the
+  same review bar as any other change.
 
 ## Changing a shared baseline
 
@@ -42,6 +43,8 @@ changelog updated, then let consumers re-point. A shared change never moves a
 - **photos** and **cartograph** each run a repo-local version-consistency gate
   (a `version:check`-style script) as part of CI; the exact command is a per-repo
   delta.
+- **photos** additionally pins dependencies to exact versions (no semver ranges);
+  most repos rely on the committed lockfile instead.
 - Any repo that adopts a changeset tool records that tool and its flow as a delta
   until enough repos share it to promote the mechanics up here.
 

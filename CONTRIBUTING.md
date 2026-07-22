@@ -7,7 +7,7 @@ records), shared SOPs, and reusable CI. How work moves here:
   format, numbering, and the supersede-don't-rewrite rule are in
   [docs/decisions/README.md](docs/decisions/README.md). Records enter as
   `Proposed`; the repo owner flips them to `Accepted` in review.
-- **SOPs**: shared procedures live in [docs/sop/](docs/sop/README.md) and follow
+- **SOPs**: shared procedures live in the [shared SOPs index](docs/sop/README.md) and follow
   [ENG-0008](docs/decisions/ENG-0008-shared-sop-inheritance.md) — baseline
   edits here propagate to every repo, so changes go through PR review with
   the changelog updated.

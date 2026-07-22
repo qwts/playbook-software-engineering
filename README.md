@@ -52,7 +52,7 @@ Each document includes navigation links, prerequisites, and cross-references to 
 
 ## Shared standards and tooling
 
-- [Shared SOPs](docs/sop/README.md) — org-wide standard operating procedures (branch/PR/review, issue lifecycle, release, security), inherited by every repo (ENG-0008).
+- [Shared SOPs](docs/sop/README.md) — org-wide standard operating procedures for how work moves, inherited by every repo (ENG-0008).
 - [Documentation governance](docs/reference/documentation-governance.md) — the `docs-gov` gate: deterministic checks that keep docs agent-readable, consumable by other repos as a reusable workflow.
 - [Documentation style guide](docs/23-documentation_style_guide.md) — conventions for writing docs in this playbook.
 - [Contributing](CONTRIBUTING.md) — how changes to this repository land.

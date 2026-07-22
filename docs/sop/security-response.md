@@ -7,18 +7,24 @@ inherited by every repo. It builds on the security settings recorded in
 
 ## Reporting a vulnerability (mandatory — extend, don't drop)
 
-- Report through the repo's **private vulnerability reporting** (GitHub security
-  advisories), following its `SECURITY.md`. Never open a public issue or PR that
-  describes an unfixed vulnerability.
+- Report through the channel the repo's `SECURITY.md` names, and never open a
+  public issue or PR that describes an unfixed vulnerability. On a **public** repo
+  that channel is GitHub private vulnerability reporting (security advisories); on
+  a **private** repo, where GitHub does not offer that reporting UI, it is the
+  private security contact `SECURITY.md` designates.
 - `SECURITY.md` is served from `qwts/.github` unless a repo publishes its own;
-  either way the private-reporting channel is the entry point.
+  either way it is the single entry point and names a channel reachable for the
+  repo's visibility.
 
 ## Settings that back it (mandatory — extend, don't drop)
 
-Every repo keeps these on — they are the ENG-0005 baseline, and disabling one is
-a security regression, not a delta:
+Every repo keeps these on — the security floor recorded in
+[repository baseline files](repo-baseline-files.md) (rationale in
+[ENG-0005](../decisions/ENG-0005-static-analysis-survey-results.md)). Disabling
+one is a security regression, not a delta:
 
-- Private vulnerability reporting **enabled** (`SECURITY.md` depends on it).
+- Private vulnerability reporting **enabled** where GitHub offers it (public
+  repos); `SECURITY.md` is the entry point regardless.
 - Secret scanning **and** push protection **on**.
 - Dependabot security updates **on**.
 - CodeQL default setup **on** once the repo has code.
