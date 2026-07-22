@@ -48,6 +48,9 @@ test('violations fixture: every rule fires where expected', () => {
 
   const expected = new Map([
     ['link-resolution docs/broken.md', 2], // dead file + dead anchor
+    // Exactly one orphan: the unused `[unused-def]: docs/orphan.md` reference
+    // definition in README confers no reachability, while docs/reflinked.md is
+    // reachable through a *used* reference link and must not appear here.
     ['orphan-doc docs/orphan.md', 1],
     ['stale-path docs/broken.md', 1], // src/gone.mjs; src/present.mjs must not fire
     ['heading-structure docs/structure.md', 3], // second H1, level skip, depth

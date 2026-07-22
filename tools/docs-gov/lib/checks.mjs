@@ -227,6 +227,10 @@ function checkOrphans(docs, docSet, indexes, findings) {
     const doc = docs.get(rel);
     if (!doc) continue;
     for (const link of doc.links) {
+      // An unused reference definition renders as nothing; only links a
+      // reader (or link-following agent) can actually traverse confer
+      // reachability.
+      if (link.isDefinition) continue;
       const resolved = resolveTarget(rel, link.target);
       if (!resolved) continue;
       if (docs.has(resolved.rel) && !reachable.has(resolved.rel)) {
@@ -480,6 +484,7 @@ function checkTokenBudgets(docs, docSet, budgets, findings) {
       const doc = docSet.get(rel);
       if (!doc) continue;
       for (const link of doc.links) {
+        if (link.isDefinition) continue; // an unused def pulls nothing into context
         const resolved = resolveTarget(rel, link.target);
         if (!resolved || !resolved.rel.endsWith('.md')) continue;
         if (!closure.has(resolved.rel) && docSet.get(resolved.rel)) {
