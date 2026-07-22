@@ -10,7 +10,7 @@ over a central Sonar instance and left one question open: what exists in the
 code-quality tooling landscape that has not been evaluated? This record is the
 outcome of that survey
 ([playbook#1](https://github.com/qwts/playbook-software-engineering/issues/1)),
-run hands-on against the org's repos at `main` on 2026-07-22: `photos`
+which was run hands-on against the org's repos at `main` on 2026-07-22: `photos`
 (TS/Electron, the well-gated reference), `cartograph` (Rust/Tauri),
 `image-trail` (TS), `bookmarkit` (JS, lightest gates). `quorum` (agent
 orchestration/collaboration) was created the same day and is empty — the
@@ -59,8 +59,9 @@ not. The measured gaps are different from the assumed ones.
 1. **ENG-0002's direction stands.** Per-language natives remain the
    enforcement layer; no central server; Sonar stays deferred. This record
    amends ENG-0002's facts, it does not supersede its direction.
-2. **The measured gap is GitHub Actions workflow security, and it is closed
-   org-wide.** Every repo has unpinned mutable action tags; photos `ci.yml`
+2. **The measured gap is GitHub Actions workflow security; closing it
+   org-wide is the direction this record sets.** Every repo has unpinned
+   mutable action tags; photos `ci.yml`
    carries a real `github.head_ref` shell-injection; CodeQL's `actions`
    analysis flagged none of it. Adopt per repo: pin all third-party actions to
    SHAs (mechanical via `pinact` or `trunk check --fix`) and run **zizmor** in
