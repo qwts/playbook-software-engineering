@@ -3,7 +3,7 @@
 How agents author commits and PRs as their own `[bot]` identity instead of
 `qwts`, so the approving human review the
 [branch/PR/review SOP](../sop/branch-pr-review.md) requires is possible at all.
-Decision and rationale: [ENG-0011](../decisions/ENG-0011-agent-pr-bot-identity.md).
+Decision and rationale: [ENG-0015](../decisions/ENG-0015-agent-pr-bot-identity.md).
 
 There is **one GitHub App per agent harness**, so authorship in history tells
 you which harness produced a change: `qwts-claude-agent`, `qwts-codex-agent`,
