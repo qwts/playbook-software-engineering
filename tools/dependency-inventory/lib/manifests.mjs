@@ -2,7 +2,7 @@
 //
 // The SBOM lists every package with its license, but does not reliably say
 // which are *tooling* (linters, formatters, test runners, build tools) versus
-// runtime. That distinction is the reuse signal ENG-0011 wants, so we take it
+// runtime. That distinction is the reuse signal ENG-0015 wants, so we take it
 // from the one place it is authoritative: a repo's directly-declared dev
 // dependencies. Transitive packages stay `runtime` by default — the reuse
 // question is "what tools does this repo choose", which is a direct-dep fact.

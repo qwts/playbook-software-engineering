@@ -1,4 +1,4 @@
-# Reusable dependency & tooling inventory (ENG-0011).
+# Reusable dependency & tooling inventory (ENG-0015).
 #
 # Consumers call this per ENG-0004's delivery model:
 #
@@ -29,6 +29,10 @@ on:
         description: Run the normalizer from the caller's own checkout (this repo's self-test; exercises the un-tagged tooling before v1 moves)
         type: boolean
         default: false
+      fail-on-error:
+        description: Fail the job when Syft or the normalizer errors. Default false — this is a report-only inventory and must not turn into a red CI check for consumers. This repo's own self-test sets it true so a broken change is caught here.
+        type: boolean
+        default: false
 
 jobs:
   dependency-inventory:
@@ -41,13 +45,19 @@ jobs:
 
       # Runs before the tooling fetch so Syft scans only the caller's own
       # manifests, never this repo's package-lock.json checked out below.
+      # Report-only for consumers (continue-on-error), blocking for the self-test.
       - name: Generate SBOM (CycloneDX)
+        continue-on-error: ${{ !inputs.fail-on-error }}
         uses: anchore/sbom-action@e22c389904149dbc22b58101806040fa8d37a610 # v0.24.0
         with:
           path: .
           format: cyclonedx-json
           output-file: dependency-sbom.cyclonedx.json
+          # This workflow only promises the normalized inventory artifact — stop
+          # Syft from uploading its own workflow artifact or attaching a raw SBOM
+          # to a consumer's release (upload-release-assets defaults to true).
           upload-artifact: false
+          upload-release-assets: false
 
       - name: Fetch inventory tooling
         if: ${{ !inputs.use-local-tooling }}
@@ -64,6 +74,7 @@ jobs:
           node-version: 22
 
       - name: Run inventory normalizer
+        continue-on-error: ${{ !inputs.fail-on-error }}
         env:
           # Expanded via env, never inlined into the script — the ENG-0005
           # workflow-injection lesson.

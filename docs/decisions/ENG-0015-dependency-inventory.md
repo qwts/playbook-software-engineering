@@ -1,7 +1,8 @@
-# ENG-0011: Inventory dependencies and tooling across the fleet — report-only, Syft SBOM plus a shared normalizer
+# ENG-0015: Inventory dependencies and tooling across the fleet — report-only, Syft SBOM plus a shared normalizer
 
 **Status:** Proposed
 **Date:** 2026-07-23
+**Issue:** qwts/playbook-engineering#30
 
 ## Context
 
@@ -35,8 +36,8 @@ does it well; reimplementing it by hand is exactly the wheel this record avoids.
    already settled.
 3. **Two views from one normalizer.** A reusable per-repo workflow gives each
    repo its own inventory artifact (the compliance record); a scheduled workflow
-   here fans out over the fleet in `inventory-fleet.json` and aggregates a
-   cross-repo catalog (the reuse surface). The catalog is an artifact, never a
+   here fans out over the active governed repos in `governance/repos.json` and
+   aggregates a cross-repo catalog (the reuse surface). The catalog is an artifact, never a
    committed doc — a fleet-sized table would blow the docs-gov token budget.
 4. **Tooling is classified from direct manifests, not inferred.** A package is
    "dev-tooling" when a repo declares it as a direct dev dependency; transitive

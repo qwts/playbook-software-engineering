@@ -10,7 +10,14 @@ function pushUnique(arr, value) {
   if (!arr.includes(value)) arr.push(value);
 }
 
-export function buildCatalog(inventories, { generatedAt = null } = {}) {
+// The org's own reusable workflows are consumed at the moving `@v1` tag by
+// design (ENG-0004) — that is not the ENG-0005 pin gap, so they must not show up
+// as unpinned findings and drown out real third-party mutable refs. Exempt any
+// `uses:` under a governed prefix; the list is an option so a repo can widen it.
+const DEFAULT_GOVERNED_PREFIXES = ['qwts/playbook-engineering/'];
+
+export function buildCatalog(inventories, { generatedAt = null, governedPrefixes = DEFAULT_GOVERNED_PREFIXES } = {}) {
+  const isGoverned = (uses) => uses.startsWith('./') || governedPrefixes.some((p) => uses.startsWith(p));
   const repos = inventories.map((i) => i.repo).filter(Boolean).sort();
 
   const components = new Map(); // `${ecosystem}/${name}` → row
@@ -36,8 +43,8 @@ export function buildCatalog(inventories, { generatedAt = null } = {}) {
       if (inv.repo) {
         pushUnique(row.usedBy, inv.repo);
         // A third-party action (has an owner/repo path) with no SHA is the
-        // ENG-0005 finding; local `./` uses are exempt.
-        if (!a.pinnedSha && !a.uses.startsWith('./')) pushUnique(row.unpinnedIn, inv.repo);
+        // ENG-0005 finding; local `./` uses and governed `@v1` workflows are exempt.
+        if (!a.pinnedSha && !isGoverned(a.uses)) pushUnique(row.unpinnedIn, inv.repo);
       }
       actions.set(a.uses, row);
     }

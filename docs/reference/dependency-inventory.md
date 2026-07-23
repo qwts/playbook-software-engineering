@@ -5,7 +5,7 @@ runs, for two uses: a license/compliance record, and a fleet-wide catalog so new
 projects adopt the existing stack rather than rebuild it. The tooling lives in
 [`tools/dependency-inventory/`](../../tools/dependency-inventory/inventory.mjs)
 and reaches every qwts repo through a reusable workflow. Decision record:
-[ENG-0011](../decisions/ENG-0011-dependency-inventory.md). It never fails a
+[ENG-0015](../decisions/ENG-0015-dependency-inventory.md). It never fails a
 build — enforcement stays with osv-scanner and cargo-deny (ENG-0005).
 
 ## How it works
@@ -58,11 +58,12 @@ workflow (the ENG-0004 safety condition).
 
 ## The fleet catalog
 
-`inventory-catalog.yml` runs weekly and on demand: it reads the fleet list in
-`inventory-fleet.json`, inventories each repo, and aggregates one cross-repo
-catalog artifact — shared tooling by reach, licenses in use, and which Actions
-are unpinned where. It needs a repo-scoped `FLEET_INVENTORY_TOKEN` secret to
-read private fleet repos; provision it before the first run.
+`inventory-catalog.yml` runs weekly and on demand: it reads the active governed
+repos from `governance/repos.json` (the single source of truth), inventories
+each, and aggregates one cross-repo catalog artifact — shared tooling by reach,
+licenses in use, and which Actions are unpinned where. It needs a repo-scoped
+`FLEET_INVENTORY_TOKEN` secret for the cross-repo checkouts; provision it before
+the first run.
 
 ## The SHA-pin asymmetry
 

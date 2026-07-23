@@ -2,7 +2,7 @@
 //
 // The presence of a config file (`.markdownlint.json`, `deny.toml`,
 // `tsconfig.json`, …) is a cheap, direct signal of which tools a repo runs —
-// the "what should a new project adopt" question ENG-0011 wants answered
+// the "what should a new project adopt" question ENG-0015 wants answered
 // without inferring anything from package graphs. Patterns are config-driven so
 // each repo declares what counts; we only report which of them exist.
 

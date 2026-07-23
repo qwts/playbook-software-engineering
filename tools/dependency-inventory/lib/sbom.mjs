@@ -3,7 +3,7 @@
 // Syft emits CycloneDX JSON; this reads the one shape we rely on (components
 // with a purl and an optional licenses array) and drops the rest. The license
 // detection is Syft's, deliberately — reproducing SPDX matching by hand is the
-// wheel ENG-0011 chose not to reinvent.
+// wheel ENG-0015 chose not to reinvent.
 
 // purl looks like `pkg:npm/@scope/name@1.2.3` or `pkg:cargo/serde@1.0.0`.
 // The ecosystem is the token between `pkg:` and the first `/`.

@@ -1,16 +1,19 @@
-# Fleet dependency & tooling catalog (ENG-0011).
+# Fleet dependency & tooling catalog (ENG-0015).
 #
-# The cross-repo "avoid recreating the wheel" surface: fans out over the
-# governed fleet listed in inventory-fleet.json, builds each repo's inventory
-# (Syft SBOM + the normalizer this repo ships), and aggregates them into one
-# catalog artifact — which tools are already standard, which licenses are in
-# use, and which GitHub Actions are still unpinned across the fleet.
+# The cross-repo "avoid recreating the wheel" surface: fans out over the active
+# governed repos in governance/repos.json (the single source of truth; ENG-0011
+# governed-scope manifest), builds each repo's inventory (Syft SBOM + the
+# normalizer this repo ships), and aggregates them into one catalog artifact —
+# which tools are already standard, which licenses are in use, and which GitHub
+# Actions are still unpinned across the fleet.
 #
 # Report-only, and on demand or weekly — never a merge gate.
 #
 # Prerequisite: a repo-scoped token in the FLEET_INVENTORY_TOKEN secret with
-# read access to the fleet repos (some are private). Provision it before the
-# first run; without it the cross-repo checkouts fail.
+# read access to the governed repos, for the cross-repo checkouts. Provision it
+# before the first run. This is the org's first fleet-wide secret (the ENG-0014
+# governance work deliberately deferred a cross-repo write token) — steward it
+# as such: read-only scope, on the fleet repos only.
 name: Fleet inventory catalog
 
 on:
@@ -36,10 +39,15 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+      # Single source of truth: the governed-scope manifest. Fan out over active
+      # repos, excluding this host repo (it inventories itself via its own CI
+      # self-test). No second copy of the fleet list to drift (ENG-0011).
       - id: read
+        env:
+          SELF: ${{ github.event.repository.name }}
         run: |
-          echo "matrix=$(jq -c '.repos' inventory-fleet.json)" >> "$GITHUB_OUTPUT"
-          echo "owner=$(jq -r '.owner' inventory-fleet.json)" >> "$GITHUB_OUTPUT"
+          echo "matrix=$(jq -c --arg self "$SELF" '[.repos[] | select(.status == "active" and .name != $self) | .name]' governance/repos.json)" >> "$GITHUB_OUTPUT"
+          echo "owner=$(jq -r '.account' governance/repos.json)" >> "$GITHUB_OUTPUT"
 
   inventory:
     needs: fleet
@@ -72,6 +80,7 @@ jobs:
           format: cyclonedx-json
           output-file: sbom.json
           upload-artifact: false
+          upload-release-assets: false
 
       - name: Set up Node
         uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
