@@ -21,7 +21,8 @@
         "glob": "docs/decisions/ENG-*.md",
         "fields": [
           { "name": "Status", "pattern": "^(Proposed|Accepted|Superseded by ENG-\\d{4})$" },
-          { "name": "Date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" }
+          { "name": "Date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          { "name": "Issue", "pattern": "^(qwts/[\\w.-]+#\\d+|predates issue-first \\(ENG-0013\\))$" }
         ]
       }
     ]
