@@ -66,6 +66,7 @@ principles; it does not waive the lower priorities.
 | [ENG-0013](ENG-0013-issue-first-provenance.md) | ENG records are issue-first — the issue holds the why, the record holds the decision | Proposed |
 | [ENG-0014](ENG-0014-canonical-agent-context.md) | Canonical agent context is CLAUDE.md — AGENTS.md generated, copies gated, baselines vendored | Proposed |
 | [ENG-0015](ENG-0015-dependency-inventory.md) | Inventory dependencies and tooling across the fleet — report-only, Syft SBOM plus a shared normalizer | Proposed |
+| [ENG-0016](ENG-0016-agent-pr-bot-identity.md) | Agent-authored PRs come from dedicated bot identities (GitHub Apps, one per harness) | Proposed |
 
 ## Related
 
