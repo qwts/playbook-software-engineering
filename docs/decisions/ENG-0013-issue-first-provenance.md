@@ -22,12 +22,16 @@ existed unevenly — ENG-0009 references its issue — but nothing required it.
    Reopening debate happens on the issue; changing the decision happens in
    the series, by amendment or supersession.
 3. **Machine-enforced, not conventional.** docs-gov's `requiredFields` gains
-   the `Issue` field for `docs/decisions/ENG-*.md`, with a pattern accepting
-   either a real reference (`qwts/<repo>#<n>`) or the escape value below.
+   the `Issue` field for `docs/decisions/ENG-*.md`. New records must match a
+   real reference (`qwts/<repo>#<n>`) — the escape value below is accepted
+   *only* for the grandfathered files, scoped by exclusion globs, so a later
+   record cannot reuse it to dodge the rule.
 4. **ENG-0001 through ENG-0010 carry the escape value**
    `predates issue-first (ENG-0013)`. Backfilling retroactive issues for
    settled decisions with no live discussion would be the ceremony this rule
-   exists to prevent; the escape value records history honestly instead.
+   exists to prevent; the escape value records history honestly instead. A
+   grandfathered record may still upgrade to a real reference if a live
+   discussion ever earns one.
 5. **The gate doubles as a filter.** A record with no real problem behind it
    has no issue to cite — which is exactly the point.
 

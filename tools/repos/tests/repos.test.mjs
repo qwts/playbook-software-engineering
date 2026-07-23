@@ -66,6 +66,14 @@ test('rejects a missing name', () => {
   assert.ok(validateManifest(m).some((e) => e.includes('name')));
 });
 
+test('rejects a name that is not a repo slug (whitespace, slashes)', () => {
+  for (const bad of ['photos ', 'my repo', 'qwts/photos']) {
+    const m = validManifest();
+    m.repos[0].name = bad;
+    assert.ok(validateManifest(m).some((e) => e.includes('slug')), `should reject ${JSON.stringify(bad)}`);
+  }
+});
+
 test('rejects repos that is not an array', () => {
   assert.ok(validateManifest({ account: 'qwts', repos: {} }).some((e) => e.includes('array')));
 });
@@ -146,6 +154,25 @@ test('check fails on a stale doc, and --write then makes it pass', () => {
 
   const doc = readFileSync(path.join(root, 'docs', 'reference', 'governed-repos.md'), 'utf8');
   assert.ok(doc.includes('| `photos` |'));
+});
+
+test('relative --manifest/--doc resolve against --root, not the cwd', () => {
+  // The test process cwd differs from the scaffold root; relative paths must
+  // still land inside the root, matching docs-gov's --config behavior.
+  const root = scaffold(validManifest());
+  const written = runCli(root, [
+    '--write',
+    '--manifest', path.join('governance', 'repos.json'),
+    '--doc', path.join('docs', 'reference', 'governed-repos.md'),
+  ]);
+  assert.equal(written.exitCode, 0);
+  const check = runCli(root, [
+    'check',
+    '--manifest', path.join('governance', 'repos.json'),
+    '--doc', path.join('docs', 'reference', 'governed-repos.md'),
+  ]);
+  assert.equal(check.exitCode, 0);
+  assert.match(check.output, /in sync/);
 });
 
 test('check fails with exit 1 on an invalid manifest', () => {

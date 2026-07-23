@@ -56,6 +56,11 @@ export function validateManifest(manifest) {
     const name = repo.name;
     if (typeof name !== 'string' || name.trim() === '') {
       errors.push(`${where}.name must be a non-empty string`);
+    } else if (!/^[\w.-]+$/.test(name)) {
+      // GitHub repo slugs: word chars, dots, hyphens. Anything else (spaces,
+      // trailing whitespace, slashes) is a typo that would also dodge the
+      // duplicate check, so reject it outright.
+      errors.push(`${where}.name "${name}" is not a valid repo slug ([\\w.-]+ only)`);
     } else {
       const key = name.toLowerCase();
       if (seen.has(key)) errors.push(`${where}.name "${name}" is a duplicate`);

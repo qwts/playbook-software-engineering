@@ -46,12 +46,11 @@ function parseArgs(argv) {
         throw new Error(`unknown argument: ${argv[i]}`);
     }
   }
-  args.manifest = args.manifest
-    ? path.resolve(args.manifest)
-    : path.join(args.root, 'governance', 'repos.json');
-  args.doc = args.doc
-    ? path.resolve(args.doc)
-    : path.join(args.root, 'docs', 'reference', 'governed-repos.md');
+  // Relative --manifest/--doc paths resolve against --root, matching
+  // docs-gov's --config behavior; absolute paths win as path.resolve always
+  // lets them.
+  args.manifest = path.resolve(args.root, args.manifest ?? path.join('governance', 'repos.json'));
+  args.doc = path.resolve(args.root, args.doc ?? path.join('docs', 'reference', 'governed-repos.md'));
   return args;
 }
 

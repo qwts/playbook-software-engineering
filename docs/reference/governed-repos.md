@@ -25,7 +25,7 @@ discipline the [ENG series](../decisions/README.md) uses for decisions.
 
 ## How to add or remove a repo
 
-All four operations are a manifest edit followed by a regenerate. Never edit the
+Every operation is a manifest edit followed by a regenerate. Never edit the
 generated table below by hand.
 
 1. **Edit** [`governance/repos.json`](../../governance/repos.json):
