@@ -61,13 +61,21 @@ export GH_TOKEN=$(node tools/agent-bot/mint-token.mjs)
 - Without `GH_TOKEN` set, `gh` and `git` fall back to the stored `qwts`
   login — the human side needs no change.
 
-Attribute the commits to the bot as well, so history matches the PR author:
+Attribute the commits to the bot as well, so history matches the PR author,
+and disable commit signing — a bot commit signed with the human's GPG/SSH key
+shows **Unverified** on GitHub, because the key's identity does not match the
+bot's committer email:
 
 ```bash
 BOT_UID=$(gh api 'users/qwts-agent%5Bbot%5D' --jq .id)
 export GIT_AUTHOR_NAME='qwts-agent[bot]' GIT_COMMITTER_NAME='qwts-agent[bot]'
 export GIT_AUTHOR_EMAIL="${BOT_UID}+qwts-agent[bot]@users.noreply.github.com" GIT_COMMITTER_EMAIL="${BOT_UID}+qwts-agent[bot]@users.noreply.github.com"
+export GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=commit.gpgsign GIT_CONFIG_VALUE_0=false
 ```
+
+Agent checkouts must use **HTTPS remotes**. An SSH remote (`git@github.com:…`)
+authenticates the push with the human's SSH key regardless of `GH_TOKEN`,
+silently making `qwts` the pusher again.
 
 ## Verifying it works
 
