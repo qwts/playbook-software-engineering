@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // Mints a short-lived GitHub App installation token for an agent bot
-// identity (ENG-0015). Prints the token to stdout for use as GH_TOKEN.
+// identity (ENG-0016). Prints the token to stdout for use as GH_TOKEN.
 // Zero-dependency by design, like the rest of tools/ (ENG-0004).
 //
 // App selection (first match wins):

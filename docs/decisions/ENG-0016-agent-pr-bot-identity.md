@@ -1,4 +1,4 @@
-# ENG-0015: Agent-authored PRs come from dedicated bot identities (GitHub Apps, one per harness)
+# ENG-0016: Agent-authored PRs come from dedicated bot identities (GitHub Apps, one per harness)
 
 **Status:** Proposed
 **Date:** 2026-07-23
