@@ -49,11 +49,18 @@ you which harness produced a change: `qwts-claude-agent`, `qwts-codex-agent`,
 ## Per-task usage (agent)
 
 Mint a token — valid one hour, scoped to that App's installed repositories —
-and act through it:
+and act through it. Minting is a hard gate: assignment and export are two
+steps, because `export GH_TOKEN=$(…)` returns `export`'s own status (0) even
+when the mint fails, and `gh` treats the resulting empty `GH_TOKEN` as absent
+— silently falling back to the stored `qwts` login and recreating the
+human-authored PR this runbook exists to prevent.
 
 ```bash
-export GH_TOKEN=$(node tools/agent-bot/mint-token.mjs)
+GH_TOKEN=$(node tools/agent-bot/mint-token.mjs) || exit 1
+export GH_TOKEN
 ```
+
+A failed mint must abort the task, never continue as `qwts`.
 
 The tool reads `GH_AGENT_APP` (or an explicit `--app qwts-claude-agent` flag,
 or a `GH_APP_ID`/`GH_APP_PRIVATE_KEY_PATH` pair for CI) and finds the App's
