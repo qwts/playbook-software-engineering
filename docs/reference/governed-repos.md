@@ -60,7 +60,7 @@ generated table below by hand.
 | Repo | Visibility | Status | Shared CI | Delta from baseline |
 | --- | --- | --- | --- | --- |
 | `playbook-engineering` | public | active | yes | — |
-| `photos` | public | active | no | Version-consistency gate in CI. |
+| `overlook` | public | active | no | Version-consistency gate in CI. |
 | `image-trail` | public | active | no | Coverage floor 71% lines / 80% branches; acceptance coverage-map update for UI/content changes. |
 | `cartograph` | public | active | no | Branch prefixes feat/ fix/ chore/ docs/; issue-before-branch; Rust gate (fmt, clippy -D warnings, test); spec/traceability artifacts in the same PR. |
 | `bookmarkit` | public | active | no | — |

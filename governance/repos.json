@@ -10,12 +10,12 @@
       "note": "This repository — source of the governance it describes."
     },
     {
-      "name": "photos",
+      "name": "overlook",
       "visibility": "public",
       "status": "active",
       "sharedCi": false,
       "delta": "Version-consistency gate in CI.",
-      "note": "Most mature working agreement; shared baselines were extracted from it. Shared-CI adoption pending (ENG-0009 order: this repo, then photos)."
+      "note": "Formerly named photos; renamed on GitHub to overlook. Historical ENG records and SOP changelogs keep the photos name (supersede-don't-rewrite). Most mature working agreement; shared baselines were extracted from it. Shared-CI adoption pending (ENG-0009 order: this repo, then overlook)."
     },
     {
       "name": "image-trail",
