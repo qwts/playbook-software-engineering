@@ -17,6 +17,11 @@ where each repo differs.
 
 ## Opening the PR
 
+- An agent opens its PR under the dedicated bot identity
+  ([ENG-0011](../decisions/ENG-0011-agent-pr-bot-identity.md)), never as the
+  human account. GitHub does not let a PR's author approve it, so an agent PR
+  authored by the human account makes the human-review requirement below
+  unsatisfiable.
 - Link the PR to its issue with a closing keyword (`Closes #N` / `Fixes #N`), so
   merging the PR closes the issue. Every change traces to an issue — see the
   [issue lifecycle](issue-lifecycle.md).
@@ -59,5 +64,7 @@ where each repo differs.
 
 ## Changelog
 
+- 2026-07-23 — agent-authored PRs are opened under the dedicated bot identity
+  (ENG-0011), keeping the one-approving-human-review requirement satisfiable.
 - 2026-07-22 — initial version; extracted the common branch/PR/review workflow
   from the photos, cartograph, and image-trail working agreements (ENG-0008).

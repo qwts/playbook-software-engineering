@@ -54,6 +54,7 @@ Each document includes navigation links, prerequisites, and cross-references to 
 
 - [Shared SOPs](docs/sop/README.md) — org-wide standard operating procedures for how work moves, inherited by every repo (ENG-0008).
 - [Org-wide agent conventions](docs/reference/agent-conventions.md) — the shared agent working agreement every repo's `AGENTS.md` links to (ENG-0006).
+- [Agent bot identity](docs/reference/agent-bot-identity.md) — the GitHub App agents author PRs as, so a human can approve them (ENG-0011).
 - [Agentic primitives conformance checklist](docs/reference/agentic-primitives-conformance-checklist.md) — the ENG-0006 §6 checklist per-repo alignment issues link to.
 - [Documentation governance](docs/reference/documentation-governance.md) — the `docs-gov` gate: deterministic checks that keep docs agent-readable, consumable by other repos as a reusable workflow.
 - [Documentation style guide](docs/23-documentation_style_guide.md) — conventions for writing docs in this playbook.
