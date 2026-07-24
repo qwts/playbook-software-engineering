@@ -13,9 +13,15 @@ test('a pinned identity outranks the helper line', () => {
   assert.equal(worktreeSlug(helpers, 'qwts-claude-agent'), 'qwts-claude-agent');
 });
 
-test('no helper and no pin means human context', () => {
+test('no helper means human context', () => {
   assert.equal(worktreeSlug('', null), null);
   assert.equal(worktreeSlug('osxkeychain\n!gh auth git-credential', null), null);
+});
+
+test('a pin without the helper marker never makes bot territory', () => {
+  // A stray qwts.agentApp in a human clone must not cause a mint.
+  assert.equal(worktreeSlug('', 'qwts-claude-agent'), null);
+  assert.equal(worktreeSlug('osxkeychain', 'qwts-claude-agent'), null);
 });
 
 test('the last bot helper line wins when several exist', () => {

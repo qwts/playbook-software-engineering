@@ -29,15 +29,22 @@ function git(...args) {
   return execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
 }
 
-// Pinned identity first (either config key generation), else the slug baked
-// into the credential-helper line by setup-worktree.
+// The credential-helper line baked in by setup-worktree is the territory
+// marker: only worktrees it configured ever have one. A pinned identity
+// (either config key generation) overrides WHICH bot, but never turns a
+// checkout without the helper into bot territory — a stray qwts.agentApp in
+// a human clone must not make the shim mint (ENG-0045, decision 3).
 export function worktreeSlug(helperLines, pinned) {
-  if (pinned) return pinned;
+  let fromHelper = null;
   for (const line of (helperLines ?? '').split('\n').reverse()) {
     const m = line.match(/git-credential-bot\.mjs\s+(\S+)\s*$/);
-    if (m) return m[1];
+    if (m) {
+      fromHelper = m[1];
+      break;
+    }
   }
-  return null;
+  if (!fromHelper) return null;
+  return pinned || fromHelper;
 }
 
 async function main() {
