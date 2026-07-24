@@ -42,6 +42,15 @@ This record settles the model permanently so it is never re-derived.
    `core.hooksPath` at this repo's `tools/agent-bot/hooks`; the `gh` shim
    must land here as governed code before it counts as part of the system.
    Machines never run uncommitted or extracted-copy code.
+6. **The agent side of the boundary is enforced.** A machine-wide
+   `pre-commit` guard (`tools/agent-bot/hooks/pre-commit`, shipped with this
+   record) blocks a commit when the process carries agent-only environment
+   markers, the commit would be attributed to the human, and the repo has a
+   GitHub remote — telling the agent it may only commit within
+   `~/.<tool>/worktrees/<repo>`. Humans are never evaluated (agent-only
+   markers, never editor markers); bot-attributed commits pass; remoteless
+   scratch repos are exempt. The asymmetry with decision 3 is deliberate:
+   agents get machinery, the human gets trust.
 
 ## Consequences
 
@@ -51,7 +60,9 @@ This record settles the model permanently so it is never re-derived.
   unreviewed machine artifact until it lands here.
 - The human obligation in decision 3 is policy, not tooling — it is stated,
   documented, and deliberately unenforced. Building overrides for it is out
-  of scope by decision, not by omission.
+  of scope by decision, not by omission. The agent obligation, by contrast,
+  is tooling-enforced (decision 6); agents identified only by editor-style
+  environments escape the guard, and decision 4 covers them.
 - The shim is PATH-level and fails open (a process that misses the PATH entry
   runs `gh` as the human). Accepted; decision 4 is the mitigation.
 - A new agent tool joins by convention, not code review of the model: its
