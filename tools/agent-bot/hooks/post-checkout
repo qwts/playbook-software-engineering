@@ -25,8 +25,9 @@ fi
 # repo's own hooks/post-checkout. Chain through to a repo-local one if present
 # (and not this same file), so setting the global path never silently disables
 # another repo's hook.
-GIT_DIR=$(git rev-parse --git-path hooks 2>/dev/null)
-LOCAL="$GIT_DIR/post-checkout"
+# --git-common-dir, not --git-path hooks: the latter honors core.hooksPath
+# and would resolve back to this global directory instead of the repo's own.
+LOCAL="$(git rev-parse --git-common-dir 2>/dev/null)/hooks/post-checkout"
 if [ -x "$LOCAL" ] && [ "$LOCAL" != "$HOOK_DIR/post-checkout" ]; then
   "$LOCAL" "$@"
 fi
